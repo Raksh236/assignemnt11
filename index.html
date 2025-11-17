@@ -16,16 +16,17 @@
         padding: 1rem 0;
         margin-top: 0.75rem;
       }
+
       .vecta-nav {
         border-radius: 9999px;
         backdrop-filter: blur(4px);
-
+        background-color: rgba(255, 255, 255, 0.95);
         position: relative;
-        z-index: 1030;
+        z-index: 1055;
       }
 
       .dropdown-menu {
-        z-index: 1050;
+        z-index: 2000 !important;
       }
 
       .navbar-brand {
@@ -38,12 +39,27 @@
         height: 420px;
         object-fit: cover;
       }
+
       #heroCarousel {
+        position: relative;
         z-index: 1;
       }
 
       footer {
         margin-top: 2rem;
+      }
+
+      .testimonial-btn {
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.4rem;
+        text-align: left;
+      }
+
+      .testimonial-btn:hover {
+        background-color: #0b5ed7;
       }
     </style>
   </head>
@@ -52,7 +68,7 @@
       <div class="vecta-nav-wrapper">
         <nav
           id="topNav"
-          class="navbar navbar-expand-lg bg-light shadow-sm px-3 vecta-nav"
+          class="navbar navbar-expand-lg shadow-sm px-3 vecta-nav"
         >
           <a class="navbar-brand me-3" href="#">Vecta</a>
           <button
@@ -80,9 +96,8 @@
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  >About Us</a
                 >
-                  About Us
-                </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Overview</a></li>
                   <li><a class="dropdown-item" href="#">Company History</a></li>
@@ -98,9 +113,8 @@
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  >Solutions</a
                 >
-                  Solutions
-                </a>
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="solutions.html#vprospect"
@@ -120,7 +134,9 @@
                 </ul>
               </li>
 
-              <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Support</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
               </li>
@@ -316,39 +332,38 @@
 
         <div class="col-md-4">
           <h3 class="mb-3">Client Testimonials</h3>
-          <div class="d-grid gap-2 mb-2">
+
+          <div class="mb-2">
             <button
-              class="btn btn-link text-start"
+              class="testimonial-btn w-100 text-start"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#t1"
             >
-              Robin Banks
-              <small class="text-muted">(CTO, Profits Financial, LLC.)</small>
+              Robin Banks (CTO, Profits Financial, LLC.)
             </button>
-          </div>
-          <div class="collapse show" id="t1">
-            <div class="card card-body">
-              Incredible results from an incredible effort by the Vecta
-              Corporation team!
+            <div class="collapse show" id="t1">
+              <div class="card card-body mt-2">
+                Incredible results from an incredible effort by the Vecta
+                Corporation team!
+              </div>
             </div>
           </div>
-          <hr />
-          <div class="d-grid gap-2 mb-2">
+
+          <div class="mb-2">
             <button
-              class="btn btn-link text-start"
+              class="testimonial-btn w-100 text-start"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#t2"
             >
-              Aaron D. Tyres
-              <small class="text-muted">(CEO, American Rubber, Inc.)</small>
+              Aaron D. Tyres (CEO, American Rubber, Inc.)
             </button>
-          </div>
-          <div class="collapse" id="t2">
-            <div class="card card-body">
-              Their dedication and professionalism increased our income and
-              exposure exponentially.
+            <div class="collapse" id="t2">
+              <div class="card card-body mt-2">
+                Their dedication and professionalism increased our income and
+                exposure exponentially.
+              </div>
             </div>
           </div>
         </div>
