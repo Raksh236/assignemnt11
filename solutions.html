@@ -10,24 +10,18 @@
     />
     <style>
       body {
-         {
-          position: relative;
-        }
+        position: relative;
       }
       .sspy-nav {
-         {
-          position: sticky;
-          top: 1rem;
-        }
+        position: sticky;
+        top: 1rem;
       }
       .content-section h2 {
-         {
-          scroll-margin-top: 80px;
-        }
+        scroll-margin-top: 80px;
       }
     </style>
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#solutionsSpy" tabindex="0">
+  <body tabindex="0">
     <header class="container my-3">
       <h1 class="display-6">Solutions</h1>
     </header>
@@ -46,7 +40,7 @@
               <li>Define your target audience and competition.</li>
               <li>Research behavior, needs, and technical expertise.</li>
               <li>
-                Establish a strong conceptual & visual identity with
+                Establish a strong conceptual &amp; visual identity with
                 consistency.
               </li>
               <li>Set corporate guidelines and refine offerings.</li>
@@ -58,7 +52,7 @@
             <h2>vConvert 2.0</h2>
             <p>
               Create an intuitive, persuasive user experience that motivates
-              action and supports transactions with robust back‑end
+              action and supports transactions with robust back-end
               capabilities.
             </p>
             <ul>
@@ -67,9 +61,9 @@
               </li>
               <li>Design for emotional resonance to drive conversion.</li>
               <li>
-                Develop back‑end programs for interaction and transactions.
+                Develop back-end programs for interaction and transactions.
               </li>
-              <li>Research user behavior & needs to refine flows.</li>
+              <li>Research user behavior &amp; needs to refine flows.</li>
               <li>Organize content for fast, logical access.</li>
             </ul>
           </section>
@@ -112,5 +106,43 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(
+          ".content-section > section"
+        );
+        const links = document.querySelectorAll("#solutionsSpy a");
+
+        function show(id) {
+          sections.forEach((s) => {
+            s.style.display = s.id === id ? "block" : "none";
+          });
+          links.forEach((a) =>
+            a.classList.toggle("active", a.getAttribute("href") === "#" + id)
+          );
+          history.replaceState(null, "", "#" + id);
+
+          const el = document.getElementById(id);
+          if (el)
+            window.scrollTo({
+              top: el.getBoundingClientRect().top + window.scrollY - 70,
+              behavior: "instant",
+            });
+        }
+
+        links.forEach((a) => {
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            show(this.getAttribute("href").substring(1));
+          });
+        });
+
+        const initial = location.hash
+          ? location.hash.substring(1)
+          : sections[0].id;
+        show(initial);
+      });
+    </script>
   </body>
 </html>
